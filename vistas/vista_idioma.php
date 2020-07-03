@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body>
+<body  class="f">
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -10,18 +10,54 @@
 
         <div class="row">
 
+            <div class="col-md-3">
+
+            </div>
+
             <div class="col-md-5">
 
-                <form action="" method="get" >
+                <div class="row">
+                    <form action="" method="get" >
 
-                    <label class="mt-3" for="idioma">Nombre del Idioma:</label>
-                    <select class="form-select" name="idioma" id="idioma">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
-                    </select>
+                        <label for="idioma">Nombre del Idioma:</label>
+                        <input  type="text" name="idioma" id="idioma" class="form-control" placeholder="Escribe el nombre del idioma">
 
-                    <button type="submit" name="btnGuardarIdioma" class="btn btn-secondary mt-4">Guardar Datos</button>
+                        <button type="submit" name="btnGuardarIdioma" class="btn btn-secondary mt-4">Guardar Datos</button>
 
-                </form>
+                    </form>
+                </div>
+
+                <hr>
+
+                <div class="row mt-3">
+
+                    <div class="col-md-12 bg-light">
+
+                        <table class="table table-striped table-hover">
+
+                            <thead>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre del Idioma</th>
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+                            foreach ($idiomas as $idioma){
+                                echo "<tr>
+                                <th scope=\"row\">{$idioma['language_id']}</th>
+                                <td>{$idioma['name']}</td>
+                            </tr>";
+                            }
+                            ?>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
 
             </div>
 

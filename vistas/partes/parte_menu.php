@@ -21,7 +21,7 @@ $listado = [
 
     <div class="container">
 
-        <a class="navbar-brand" style="font-size: 25px" href="index.php">Sakila's Movies</a>
+        <a class="navbar-brand" style="font-size: 25px" href="index.php"><img  class="rounded-circle" src="static/images/Anotación 2020-07-02 130053.png " alt="Nombre de la pagina"   width="100px "  > </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,4 +46,4 @@ $listado = [
 
     </div>
 
-    </nav>
+</nav>

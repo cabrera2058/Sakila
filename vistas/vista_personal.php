@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body>
+<body  class="f">
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -9,6 +9,10 @@
     <div class="container">
 
         <div class="row">
+
+            <div class="col-md-3">
+
+            </div>
 
             <div class="col-md-5">
 
@@ -21,9 +25,15 @@
                     <input  type="text" name="apellido" id="apellido" class="form-control" placeholder="Escribe tu apellido">
 
                     <label class="mt-3" for="direccion">Dirección:</label>
-                    <input  type="text" name="direccion" id="direccion" class="form-control" placeholder="Escribe tu direccion">
+                    <select class="form-select" name="direccion" id="direccion">
+                        <option value="">Selecciona una dirección</option>
+                        <?php
 
-                    <div class="form-file mt-3">
+                        foreach ($direcciones as $direccion)
+                            echo "<option value=\"{$direccion['address_id']}\">{$direccion['address']}</option>";
+                        ?>
+                    </select>
+                    <div class="form-file mt-4">
                         <input type="file" class="form-file-input" id="foto" name="foto">
                         <label class="form-file-label" for="foto">
                             <span class="form-file-text">Selecciona una foto...</span>
@@ -36,7 +46,12 @@
 
                     <label class="mt-3" for="tienda">Tienda:</label>
                     <select class="form-select" name="tienda" id="tienda">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                        <option value="">Seleccione una tienda</option>
+
+                        <?php
+                        foreach ($tiendas as $tienda)
+                            echo "<option value=\"{$tienda['store_id']}\">{$tienda['store_id']}</option>";
+                        ?>
                     </select>
 
                     <div class="form-check mt-3">

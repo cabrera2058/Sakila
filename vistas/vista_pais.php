@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body>
+<body  class="f">
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -10,16 +10,54 @@
 
         <div class="row">
 
-            <div class="col-md-5">
+            <div class="col-md-3">
 
-                <form action="" method="get" >
+            </div>
 
-                    <label for="pais">Nombre del País:</label>
-                    <input  type="text" name="pais" id="pais" class="form-control" placeholder="Escribe el nombre del país">
+            <div class="col-md-5 bg">
 
-                    <button type="submit" name="btnGuardarPais" class="btn btn-secondary mt-4">Guardar Datos</button>
+                <div class="row">
+                    <form action="" method="get" >
 
-                </form>
+                        <label for="pais">Nombre del País:</label>
+                        <input  type="text" name="pais" id="pais" class="form-control" placeholder="Escribe el nombre del país">
+
+                        <button type="submit" name="btnGuardarPais" class="btn btn-secondary mt-4">Guardar Datos</button>
+
+                    </form>
+                </div>
+
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-md-12 bg-light ">
+
+                        <table class="table table-striped table-hover">
+
+                            <thead>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre del Pais</th>
+                            </thead>
+
+                            <tbody>
+
+                            <?php
+                            foreach ($paises as $pais){
+                                echo "<tr>
+                                <th scope=\"row\">{$pais['country_id']}</th>
+                                <td>{$pais['country']}</td>
+                            </tr>";
+                            }
+                            ?>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
 
             </div>
 

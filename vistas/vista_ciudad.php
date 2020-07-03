@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body>
+<body  class="f">
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -9,6 +9,10 @@
     <div class="container">
 
         <div class="row">
+
+            <div class="col-md-3">
+
+            </div>
 
             <div class="col-md-5">
 
@@ -19,7 +23,14 @@
 
                     <label class="mt-3" for="pais">País:</label>
                     <select class="form-select" name="pais" id="pais">
-                        <option value="">Aqui va el listado de la ciudad desde MySQL</option>
+                        <option value="">Selecciona un país</option>
+                        <?php
+
+                        foreach ($paises as $pais)
+                            echo "<option value=\"{$pais['country_id']}\">{$pais['country']}</option>"
+
+                        ?>
+
                     </select>
 
 
