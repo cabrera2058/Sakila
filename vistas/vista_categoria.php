@@ -2,7 +2,7 @@
 
 <?php include_once "partes/parte_menu.php" ?>
 
-<body>
+<body class="f">
 
 <h1 class="mt-5" align="center">Bienvenidos a la página <?php echo $nombrePagina; ?> </h1>
 
@@ -29,7 +29,7 @@
                         <?= $validaciones['errorCategoria'] ?? ""; ?>
                     </div>
 
-                    <button type="submit" name="btnGuardarCategoria" class="btn btn-secondary mt-4"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
+                    <button type="submit" name="btnGuardarCategoria" class="btn btn-secondary mt-4 a"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
 
@@ -51,7 +51,7 @@
 
                     <form action="" method="post">
 
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover  tabla">
 
                             <thead>
                             <th scope="col">ID</th>
@@ -67,8 +67,8 @@
                                           <th scope=\"row\">{$categoria['category_id']}</th>
                                           <td>{$categoria['name']}</td>
                                           <td>
-                                              <button class='btn btn-outline-danger btn-sm' title='Eliminar categoria' name='eliminar' value='{$categoria['category_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
-                                              <button class='btn btn-outline-info btn-sm' title='Editar categoria' name='editar' value='{$categoria['category_id']}'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
+                                              <button class= 'btn btn-outline-danger btn-sm' title='Eliminar categoria' name='eliminar' value='{$categoria['category_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
+                                              <button class='btn btn-outline-primary btn-sm' title='Editar categoria' name='editar' value='{$categoria['category_id']}'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
                                           </td>
                                       </tr>";
                             }

@@ -16,7 +16,9 @@
 .tabla{
     background-color: white;
 }
-
+.n{
+    color: yellow;
+}
 
 #menu a.nav-link{
     border-bottom: transparent solid 0px;
@@ -25,7 +27,7 @@
 #menu a.nav-link:hover{
     font-size: 20px;
     color: dodgerblue;
-    border-bottom: solid dodgerblue;
+   /* border-bottom: solid dodgerblue;*/
 }
 #menu a.select{
     color: yellow;

@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body>
+<body class="f">
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -68,7 +68,7 @@
                     <input  type="password" name="password" id="password" class="form-control" placeholder="Escribe tu contraseña">
 
 
-                    <button type="submit" name="btnGuardarPersonal" class="btn btn-secondary mt-3"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
+                    <button type="submit" name="btnGuardarPersonal" class="btn btn-secondary mt-3 a"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
 
@@ -112,13 +112,13 @@
 
     <?php } else { ?>
 
-        <div class="row mt-3">
+        <div class="row mt-4">
 
-            <div class="col-md-12">
+            <div class="col-md-8">
 
                 <form action="" method="post">
 
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover tabla">
 
                         <thead>
                         <th scope="col">ID Personal</th>

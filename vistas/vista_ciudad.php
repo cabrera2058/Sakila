@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body>
+<body class="f">
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -54,7 +54,7 @@
                             <?= $validaciones['errorPais'] ?? ""; ?>
                         </div>
 
-                        <button type="submit" name="btnGuardarCiudad" class="btn btn-secondary mt-4"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
+                        <button type="submit" name="btnGuardarCiudad" class="btn btn-secondary mt-4 a"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                     </form>
 
@@ -76,7 +76,7 @@
 
                         <form action="" method="post">
 
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover tabla">
 
                                 <thead>
                                 <th scope="col">ID de la ciudad</th>

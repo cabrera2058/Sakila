@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body>
+<body class="f">
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -49,9 +49,12 @@
                         </label>
                     </div>
 
-                    <button type="submit" name="btnGuardarCliente" class="btn btn-secondary mt-3"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
+                    <button type="submit" name="btnGuardarCliente" class="btn btn-secondary mt-3 a"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
+                </div>
+
+</div>
 
                 <hr>
 
@@ -65,7 +68,7 @@
 
                     <div class="col-md-12">
 
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover tabla">
 
                             <thead>
                             <th scope="col">ID del Cliente</th>
@@ -113,10 +116,7 @@
 
                 <?php } ?>
 
-            </div>
-
-        </div>
-
+           
     </div>
 
 <hr>

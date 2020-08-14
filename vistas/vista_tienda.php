@@ -2,7 +2,7 @@
 
 <?php include_once "partes/parte_menu.php" ?>
 
-<body>
+<body class="f">
 
 <h1 class="mt-5" align="center">Bienvenidos a la página <?php echo $nombrePagina; ?> </h1>
 
@@ -39,7 +39,7 @@
                             echo "<option value=\"{$direccion['address_id']}\">{$direccion['address']}</option>";
                         ?>
                     </select>
-                    <button type="submit" name="btnGuardarTienda" class="btn btn-secondary mt-4"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
+                    <button type="submit" name="btnGuardarTienda" class="btn btn-secondary mt-4 a"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
 
@@ -58,7 +58,7 @@
 
                 <div class="col-md-12">
 
-                    <table class="table">
+                    <table class="table tabla">
 
                         <thead>
                             <th>ID de la tienda</th>
