@@ -1,13 +1,45 @@
+/* CSS para el menú que está seleccionado actualmente */
+/*---------------------------------------------*/
+
 .f{
- 
-    background-image: url('../images/cine-realista_1284-25339.jpg');
-
-    background-position: center center;
-    
+    background-image: url("../images/m.jpg");
     background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-color: #464646;
-   color: white;
-
-
+    color: white;
 }
+.a{
+   
+    background-color: blue;
+    
+}
+.tabla{
+    background-color: white;
+}
+
+
+#menu a.nav-link{
+    border-bottom: transparent solid 0px;
+    transition: all ease .3s;
+}
+#menu a.nav-link:hover{
+    font-size: 20px;
+    color: dodgerblue;
+    border-bottom: solid dodgerblue;
+}
+#menu a.select{
+    color: yellow;
+}
+/*---------------------------------------------*/
+
+
+
+/* Color blanco para los título */
+/*---------------------------------------------*/
+.blanco{
+    color: white;
+}
+.blanco:hover{
+    color: white;
+}
+/*--------------------------------------------*/

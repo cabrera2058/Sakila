@@ -1,10 +1,10 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body  class="f">
+<body class="f ">
 
 <?php include_once "partes/parte_menu.php"?>
 
-<h1 class="mt-5" align="center">Bienvenidos a la página <?php echo $nombrePagina; ?> </h1>
+<h1 class=" b mt-5" align="center ">Bienvenidos a la página <?php echo $nombrePagina; ?> </h1>
 
 <div class="container">
 
@@ -18,53 +18,86 @@
 
             <div class="row">
 
-                <form action="" method="get" >
+                <form action="" method="post">
+
+                    <input type="hidden" name="idActor" value="<?= $idActor ?>">
 
                     <label for="inputNombreActor">Nombre del Actor: </label>
-                    <input  type="text" name="inputNombreActor" id="inputNombreActor" class="form-control" placeholder="Escribe el nombre del actor">
+                    <input  type="text" name="inputNombreActor" id="inputNombreActor"
+                            class="form-control <?php echo isset($validaciones['errorNombre']) ? 'is-invalid' : '' ?>" placeholder="Escribe el nombre del actor" value="<?= $nombreActor ?>">
+                    <div class="invalid-feedback">
+                        <?= $validaciones['errorNombre'] ?? ""; ?>
+                    </div>
+
 
                     <label class="mt-3" for="inputApellidoActor">Apellido del Actor: </label>
-                    <input type="text" name="inputApellidoActor" id="inputApellidoActor" class="form-control" placeholder="Escribe el apellido del actor">
+                    <input type="text" name="inputApellidoActor" id="inputApellidoActor"
+                           class="form-control <?php echo isset($validaciones['errorApellido']) ? 'is-invalid' : '' ?>" placeholder="Escribe el apellido del actor" value="<?= $apellidoActor ?>">
+                    <div class="invalid-feedback">
+                        <?= $validaciones['errorApellido'] ?? ""; ?>
+                    </div>
 
-                    <button type="submit" name="btnGuardarDatos" class="btn btn-secondary mt-3">Guardar Datos</button>
+
+                    <div class="mt-3">
+                        <button type="submit" name="btnGuardarDatos" class="btn btn-secondary a"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
+                    </div>
 
                 </form>
+
+                <?php include_once "partes/parte_mensaje.php" ?>
 
             </div>
 
             <hr>
 
-            <div class="row mt-3 bg-light">
+            <?php if(empty($actores)) { ?>
 
-                <div class="col-md-12 ">
+            <?php include_once "partes/parte_info.php" ?>
 
-                    <table class="table table-striped table-hover">
+            <?php } else { ?>
 
-                        <thead>
+            <div class="row mt-5 bg-ligh>
+
+                <div class="col-md-12">
+
+                    <form action="" method="post">
+
+                        <table class="table table-striped table-hover tabla">
+
+                            <thead class="">
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
-                        </thead>
+                            <th scope="col">Acciones</th>
+                            </thead>
 
-                        <tbody>
+                            <tbody>
 
-                        <?php
-                            foreach ($actores as $actor){
+                            <?php
+                            foreach ($actores as $actor) {
                                 echo "<tr>
-                                <th scope=\"row\">{$actor['actor_id']}</th>
-                                <td>{$actor['first_name']}</td>
-                                <td>{$actor['last_name']}</td>
-                            </tr>";
+                                         <th scope=\"row\">{$actor['actor_id']}</th>
+                                         <td>{$actor['first_name']}</td>
+                                         <td>{$actor['last_name']}</td>
+                                         <td>
+                                         <button class='btn btn-outline-danger btn-sm' title='Eliminar actor' name='eliminar' value='{$actor['actor_id']}'><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></button>
+                                         <button class='btn btn-outline-primary btn-sm' title='Editar actor' name='editar' value='{$actor['actor_id']}'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
+                                         </td>
+                                     </tr>";
                             }
-                        ?>
+                            ?>
 
-                        </tbody>
+                            </tbody>
 
-                    </table>
+                        </table>
+
+                    </form>
 
                 </div>
 
             </div>
+
+            <?php } ?>
 
         </div>
 

@@ -1,6 +1,6 @@
 <?php include_once "partes/parte_head.php"?>
 
-<body  class="f">
+<body>
 
 <?php include_once "partes/parte_menu.php"?>
 
@@ -16,7 +16,7 @@
 
             <div class="col-md-5">
 
-                <form action="" method="get" >
+                <form action="" method="post" >
 
                     <label class="mt-3" for="nombre">Nombre:</label>
                     <input  type="text" name="nombre" id="nombre" class="form-control" placeholder="Escribe tu nombre">
@@ -64,13 +64,35 @@
                     <label class="mt-3" for="nombreUsuario">Nombre de Usuario:</label>
                     <input  type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" placeholder="Escribe tu nombre de usuario">
 
-                    <label class="mt-3" for="contraseña">Contraseña:</label>
-                    <input  type="password" name="contraseña" id="contraseña" class="form-control" placeholder="Escribe tu contraseña">
+                    <label class="mt-3" for="password">Contraseña:</label>
+                    <input  type="password" name="password" id="password" class="form-control" placeholder="Escribe tu contraseña">
 
 
-                    <button type="submit" name="btnGuardarPersonal" class="btn btn-secondary mt-3">Guardar Datos</button>
+                    <button type="submit" name="btnGuardarPersonal" class="btn btn-secondary mt-3"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar Datos</button>
 
                 </form>
+
+                <?php
+
+                if(isset($error)){
+                    echo "<div class=\"alert alert-danger alert-dismissible fade show mt-3\" role=\"alert\">
+                            {$error}
+                            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                                <span aria-hidden=\"true\">&times;</span>
+                            </button>
+                        </div>";
+                }
+
+                if(isset($personalInsertado)){
+                    echo "<div class=\"alert alert-success alert-dismissible fade show mt-3\" role=\"alert\">
+                            Los datos del personal se han insertado correctamente.
+                            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                                <span aria-hidden=\"true\">&times;</span>
+                            </button>
+                        </div>";
+                }
+
+                ?>
 
             </div>
 
@@ -78,6 +100,70 @@
 
     </div>
 
+    <?php include_once "partes/parte_mensaje.php" ?>
+
 <hr>
+
+<div class="container">
+
+    <?php if(empty($infoPersonales)) { ?>
+
+        <?php include_once "partes/parte_info.php" ?>
+
+    <?php } else { ?>
+
+        <div class="row mt-3">
+
+            <div class="col-md-12">
+
+                <form action="" method="post">
+
+                    <table class="table table-striped table-hover">
+
+                        <thead>
+                        <th scope="col">ID Personal</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Tienda</th>
+                        <th scope="col">Activo</th>
+                        <th scope="col">Nombre Usuario</th>
+                        <th scope="col">Contraseña</th>
+
+                        </thead>
+
+                        <tbody>
+
+                        <?php
+                        foreach ($infoPersonales as $personal) {
+                            echo "<tr>
+                                   <th scope=\"row\">{$personal['staff_id']}</th>
+                                   <td>{$personal['first_name']}</td>
+                                   <td>{$personal['last_name']}</td>
+                                   <td>{$personal['address']}</td>
+                                   <td>{$personal['email']}</td>
+                                   <td>{$personal['store_id']}</td>
+                                   <td>{$personal['active']}</td>
+                                   <td>{$personal['username']}</td>
+                                   <td>{$personal['password']}</td>
+                        </tr>";
+                        }
+                        ?>
+
+                        </tbody>
+
+                    </table>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    <?php } ?>
+</div>
+
+
 
 <?php include_once "partes/parte_footer.php" ?>

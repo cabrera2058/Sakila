@@ -1,7 +1,12 @@
 <?php
 
-// Definir la funcion para el manejo de errores
+if(session_status() == 1){
+    session_start();
+}
+
+// Definir la funcion para   el manejo de errores
 function reportarErrores($numero, $mensaje, $archivo, $linea) {
+
     $codigos = [
         1 => "Error fatal",
         2 => "Advertencia",
@@ -14,6 +19,7 @@ function reportarErrores($numero, $mensaje, $archivo, $linea) {
           <hr>
           <span>En la línea <b>{$linea}</b> del archivo <b>{$archivo}</b></span>
         </div>";
+
 }
 
 set_error_handler('reportarErrores');
@@ -36,4 +42,19 @@ function imprimirArray($array){
     echo "<pre>";
     print_r($array);
     echo "</pre>";
+}
+
+function redireccionar($ruta){
+    header("Location: {$ruta}", true, 303);
+}
+
+//Manejo de mensajes success usando SESSION//
+if(session_status() == 2){ //El 2 significa que el array SESSION esta funcionando, osea que hay una session//
+
+    $mensaje = $_SESSION['mensaje'] ?? "";
+
+    if(isset($_SESSION['mensaje'])){
+        unset($_SESSION['mensaje']);
+    }
+
 }
